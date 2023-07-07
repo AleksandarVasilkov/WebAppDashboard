@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aleksandar's WebApp Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+  <header>
+        
+      <div id="logo">
+        <h1><strong>Web</strong><span>App</span><sup>TM</sup></h1>
+      </div>
+          
+        <div id="bell">
+          <div id="icon">
+            <button id="notificationButton" onclick="togglePopup()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+              <span id="notificationBadge">3</span>
+            </button>
+          </div>
+        <div id="popupWindow" class="hidden">
+          <h2 class="popup-heading">Notifications:</h2>
+          <p class="popup-notification">Notification 1</p>
+          <p class="popup-notification">Notification 2</p>
+          <p class="popup-notification">Notification 3</p>
+          <button onclick="closePopup()">Close</button>
+        </div>
+      </div>
+        
+      <div id="profile">
+        <img src="images/member-1.jpg" alt="Profile Picture" />
+      </div>
+      
+      <div>
+        <h3>Student Name</h3>
+      </div>
+
+         
+  </header>
+  
+  <nav>
+    <ul>
+        <li>
+          <a href="#dashboard">
+            <img src="svgs/home.svg" alt="Dashboard Icon" />
+          </a>
+        </li>
+        <li>
+          <a href="#members">
+            <img src="svgs/bar-chart.svg" alt="Members Icon" />
+            
+          </a>
+        </li>
+        <li>
+          <a href="#visits">
+            <img src="svgs/members.svg" alt="Visits Icon" />
+            
+          </a>
+        </li>
+        <li>
+          <a href="#settings">
+            <img src="svgs/settings.svg" alt="Settings Icon" />
+            
+          </a>
+        </li>
+      </ul>
+  </nav>
+  
+  <main>
+    <div class="dashboard-top"> 
+      <span class="headline">
+      <h3>Dashboard</h3></span>
+      <div class="tab"></div>
+    </div>
+
+      <!-- alert banner -->
+      <div id="alertBanner" class="alert-banner">
+        <span class="message">Alert: You have unread messages.</span>
+        <button class="close-btn" onclick="closeAlertBanner()">X</button>
+      </div>
+      
+
+<!-- line graph charts -->
+<section class="traffic">
+  <div class="traffic-header">
+    <h3>TRAFFIC</h3>
+      <ul class="traffic-nav">
+        <li class="traffic-nav-link">Hourly</li>
+        <li class="traffic-nav-link">Daily</li>
+        <li class="traffic-nav-link">Weekly</li>
+        <li class="traffic-nav-link">Monthly</li>
+      </ul>
+  </div>
+  
+  <div class="widget-container-full">
+  <!-- element line graph will attach to -->
+  <canvas id="traffic-chart">
+    
+  </canvas>
+  </div>
+</section>
+
+  <!-- bar graph -->
+<section class="daily">
+  <h3>Daily Traffic</h3>
+  <div class="widget-container-half">
+  <!-- element bar graph will attach to -->
+  <canvas id="daily-chart"></canvas>
+  </div>
+</section>
+
+  <!-- donut graph - change ids and classes -->
+<section class="mobile">
+  <h3>Mobile Users</h3>
+  <div class="widget-container-half">
+  <!-- element bar graph will attach to -->
+  <canvas id="mobile-chart"></canvas>
+  <script>
+    // Get the context of the canvas element
+    var ctx = document.getElementById('traffic-chart').getContext('2d');
+
+    let trafficData = {
+        labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
+        datasets: [{
+            data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
+            backgroundColor: 'rgba(116, 119, 191, .3)', // color of the area under the line
+            borderColor: 'rgba(75, 192, 192, 1)', // color of the line
+            borderWidth: 1 // width of the line
+        }]
+    };
+
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: trafficData,
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true // start y-axis at 0
+                }
+            }
+        }
+    });
+</script>
+  </div>
+</section>
+
+  <div class="social-container">
+    <div class="social-image">
+    <!-- inline SVG not included for brevity  -->
+    </div>
+    <div class="social-text">
+    <p>Facebook</p>
+    <p>10,320</p>
+    </div>
+
+    <div class="social-image">
+      <!-- inline SVG not included for brevity  -->
+      </div>
+      <div class="social-text">
+      <p>Instagram</p>
+      <p>16,445</p>
+      </div>
+
+      <div class="social-image">
+        <!-- inline SVG not included for brevity  -->
+        </div>
+        <div class="social-text">
+        <p>Twitter</p>
+        <p>22,189</p>
+        </div>
+  </div>
+    
+  <!-- new members area -->
+  <section class="new-members">
+    <h3>New Members</h3>
+    <div class="member-container">
+      <div class="member-photo"
+        <img src="images/Sept2018Profile.jpg" />
+      </div>
+      <div class="member-name">
+        <p>Victoria Chambers</p>
+        <a href="#">victoria.chambers80@example.com</a>
+      </div>
+      <div class="date-joined">
+        <p>10/15/15</p>
+      </div>
+    </div>
+
+    <!-- second new member -->
+    <div class="member-container">
+      <div class="member-photo"
+        <img src="images/Sept2018Profile.jpg" />
+      </div>
+      <div class="member-name">
+        <p>Victoria Chambers</p>
+        <a href="#">victoria.chambers80@example.com</a>
+      </div>
+      <div class="date-joined">
+        <p>10/15/15</p>
+      </div>
+    </div>
+
+    <!-- third new member -->
+    <div class="member-container">
+      <div class="member-photo"
+        <img src="images/Sept2018Profile.jpg" />
+      </div>
+      <div class="member-name">
+        <p>Victoria Chambers</p>
+        <a href="#">victoria.chambers80@example.com</a>
+      </div>
+      <div class="date-joined">
+        <p>10/15/15</p>
+      </div>
+    </div>
+
+    <!-- fourth new member -->
+    <div class="member-container">
+      <div class="member-photo"
+        <img src="images/Sept2018Profile.jpg" />
+      </div>
+      <div class="member-name">
+        <p>Victoria Chambers</p>
+        <a href="#">victoria.chambers80@example.com</a>
+      </div>
+      <div class="date-joined">
+        <p>10/15/15</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- recent activity -->
+  <section class="recent-activity">
+    <h3>Recent Activity</h3>
+    
+    <div class="activity">
+      <div class="member-photo"
+        <img src="images/Sept2018Profile.jpg" />
+      </div>
+      <div class="activity-text">
+        <p>Victoria Chambers commented on</p>
+        <p>5 hours ago</p>
+      </div>
+      <div class="link-to-activity">
+        <p><a href="#">&gt;</a></p>
+      </div>
+    </div>
+
+    <!-- second activity -->
+    <div class="activity">
+      <div class="member-photo"
+        <img src="images/Sept2018Profile.jpg" />
+      </div>
+      <div class="activity-text">
+        <p>Victoria Chambers commented on</p>
+        <p>5 hours ago</p>
+      </div>
+      <div class="link-to-activity">
+        <p><a href="#">&gt;</a></p>
+      </div>
+    </div>
+
+    <!-- third activity -->
+    <div class="activity">
+      <div class="member-photo"
+        <img src="images/Sept2018Profile.jpg" />
+      </div>
+      <div class="activity-text">
+        <p>Victoria Chambers commented on</p>
+        <p>5 hours ago</p>
+      </div>
+      <div class="link-to-activity">
+        <p><a href="#">&gt;</a></p>
+      </div>
+    </div>
+
+    <!-- fourth activity -->
+    <div class="activity">
+      <div class="member-photo"
+        <img src="images/Sept2018Profile.jpg" />
+      </div>
+      <div class="activity-text">
+        <p>Victoria Chambers commented on</p>
+        <p>5 hours ago</p>
+      </div>
+      <div class="link-to-activity">
+        <p><a href="#">&gt;</a></p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- message form -->
+  <section class="message">
+    <h3>Message User</h3>
+    <form class="widget-container">
+        <input type="text" placeholder="Search for user" class="form-field" id="userField">
+        <textarea placeholder="Message for user" class="form-area" id="messageField"></textarea>
+        <button type="button" class="button-primary" id="send">Send</button>
+    </form>
+</section>
+
+   
+  <!-- settings section with toggles: -->
+  <!-- local settings widget -->
+<section class="settings">
+  <h3>Settings</h3>
+  <!-- custom CSS toggle code-->
+  <input type="checkbox">
+  <!-- custom CSS toggle code-->
+  <input type="checkbox">
+  
+  <select class="form-field" id="timezone">
+  <option disabled selected>Select a Timezone</option>
+  <option>Eastern</option>
+  <!-- more options -->
+  </select>
+  <div class="settings-button" >
+  <button class="button-primary" id="save">Save</button>
+  <button class="button-disabled" id="cancel">Cancel</button>
+  </div>
+  </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script src="app.js"></script>
+</body>
+</html>
