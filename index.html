@@ -92,7 +92,7 @@
   <div class="traffic-header">
     <h3>TRAFFIC</h3>
       <ul class="traffic-nav">
-        <li class="traffic-nav-link">Hourly</li>
+        <li class="traffic-nav-link selected">Hourly</li>
         <li class="traffic-nav-link">Daily</li>
         <li class="traffic-nav-link">Weekly</li>
         <li class="traffic-nav-link">Monthly</li>
@@ -122,32 +122,7 @@
   <div class="widget-container-half">
   <!-- element bar graph will attach to -->
   <canvas id="mobile-chart"></canvas>
-  <!-- <script>
-    // Get the context of the canvas element
-    var ctx = document.getElementById('traffic-chart').getContext('2d');
-
-    let trafficData = {
-        labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
-        datasets: [{
-            data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
-            backgroundColor: 'rgba(116, 119, 191, .3)', // color of the area under the line
-            borderColor: 'rgba(75, 192, 192, 1)', // color of the line
-            borderWidth: 1 // width of the line
-        }]
-    };
-
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: trafficData,
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true // start y-axis at 0
-                }
-            }
-        }
-    });
-</script> -->
+  
   </div>
 </section>
 
