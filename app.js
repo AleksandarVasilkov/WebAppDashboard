@@ -131,9 +131,9 @@ var ctxDaily = document.getElementById('daily-chart').getContext('2d');
 var dailyData = {
     labels: ["S", "M", "T", "W", "T", "F", "S"],
     datasets: [{
-        data: [1200, 1900, 3000, 5000, 2000, 3000, 2500],
-        backgroundColor: 'rgba(116, 119, 191, .3)',
-        borderColor: 'rgba(75, 192, 192, 1)',
+        data: [75, 110, 175, 125, 225, 200, 100],
+        backgroundColor: '#7477BF',
+        borderColor: '#7477BF',
         borderWidth: 1
     }]
 };
@@ -146,26 +146,83 @@ var myDailyChart = new Chart(ctxDaily, {
             y: {
                 beginAtZero: true
             }
+        },
+        plugins: {
+            legend: {
+                display: false
+            }
         }
     }
 });
 
 
-// // Create variables to store the form fields.
-// const user = document.getElementById("userField");
-// const message = document.getElementById("messageField");
-// const send = document.getElementById("send");
+var ctxMobile = document.getElementById('mobile-chart').getContext('2d');
 
-// // Create a click event listener on send
-// send.addEventListener('click', () => {
-//     // ensure user and message fields are filled out
-//     if (user.value === "" && message.value === "") {
-//         alert("Please fill out user and message fields before sending");
-//     } else if (user.value === "" ) {
-//         alert("Please fill out user field before sending");
-//     } else if (message.value === "" ) {
-//         alert("Please fill out message field before sending");
-//     } else {
-//         alert(`Message successfully sent to: ${user.value}`);
-//     }
-// });
+var mobileData = {
+    labels: ['Desktop', 'Tablet', 'Phones'],
+    datasets: [{
+        data: [70, 15, 15],
+        backgroundColor: ['#7477BF', '#81C98F', '#51B6C8'],
+        borderColor: ['#7477BF', '#81C98F', '#51B6C8'],
+        borderWidth: 1
+    }]
+};
+
+var myMobileChart = new Chart(ctxMobile, {
+    type: 'doughnut',
+    data: mobileData,
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'right',
+            },
+            title: {
+                display: false,
+            }
+        }
+    }
+});
+
+// Create variables to store the form fields.
+const user = document.getElementById("userField");
+const message = document.getElementById("messageField");
+const send = document.getElementById("send");
+
+// Create a click event listener on send
+send.addEventListener('click', () => {
+    // ensure user and message fields are filled out
+    if (user.value === "" && message.value === "") {
+        alert("Please fill out user and message fields before sending");
+    } else if (user.value === "" ) {
+        alert("Please fill out user field before sending");
+    } else if (message.value === "" ) {
+        alert("Please fill out message field before sending");
+    } else {
+        alert(`Message successfully sent to: ${user.value}`);
+    }
+});
+
+
+
+var names = ["Victoria", "Dan", "Dawn", "Dale"];
+var lastKeyWasBackspace = false;
+
+document.getElementById("userField").addEventListener("keydown", function(e) {
+    lastKeyWasBackspace = e.key === 'Backspace';
+});
+
+document.getElementById("userField").addEventListener("input", function(e) {
+    if (!lastKeyWasBackspace) {
+        var input = e.target;
+        var current = input.value;
+        var match = names.find(name => name.toUpperCase().startsWith(current.toUpperCase()));
+
+        if (match) {
+            input.value = match;
+            input.setSelectionRange(current.length, match.length);
+        }
+    }
+});
+
+
