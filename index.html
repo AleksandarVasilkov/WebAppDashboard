@@ -49,18 +49,18 @@
   <nav>
     <ul>
         <li>
-          <a href="#dashboard">
+          <a href="#dashboard-top">
             <img src="svgs/home.svg" alt="Dashboard Icon" />
           </a>
         </li>
         <li>
-          <a href="#members">
+          <a href="#traffic">
             <img src="svgs/bar-chart.svg" alt="Members Icon" />
             
           </a>
         </li>
         <li>
-          <a href="#visits">
+          <a href="#new-members">
             <img src="svgs/members.svg" alt="Visits Icon" />
             
           </a>
@@ -75,7 +75,7 @@
   </nav>
   
   <main>
-    <div class="dashboard-top"> 
+    <div class="dashboard-top" id="dashboard-top"> 
       <span class="headline">
       <h3>Dashboard</h3></span>
       <div class="tab"></div>
@@ -89,7 +89,7 @@
       
 
 <!-- line graph charts -->
-<section class="traffic">
+<section class="traffic" id="traffic">
   <div class="traffic-header">
     <h3>TRAFFIC</h3>
       <ul class="traffic-nav">
@@ -102,55 +102,58 @@
   
   <div class="widget-container-full">
   <!-- element line graph will attach to -->
-  <canvas id="traffic-chart">
-    
-  </canvas>
+  <canvas id="traffic-chart"></canvas>
   </div>
 </section>
 
   <!-- bar graph -->
 <section class="daily">
-  <h3>DAILY TRAFFIC</h3>
-  <div class="widget-container-half">
-  <!-- element bar graph will attach to -->
-  <canvas id="daily-chart"></canvas>
+  <div class="daily-traffic-wrapper">
+    <h3>DAILY TRAFFIC</h3>
+    <div class="widget-container-half">
+      <canvas id="daily-chart"></canvas>
+    </div>
   </div>
 </section>
 
-  <!-- donut graph - change ids and classes -->
+  <!-- donut graph -->
 <section class="mobile">
+  <div class="mobile-traffic-wrapper">
   <h3>MOBILE USERS</h3>
   <div class="widget-container-half">
-  <!-- element bar graph will attach to -->
-  <canvas id="mobile-chart"></canvas>
-  
-  </div>
+    <canvas id="mobile-chart"></canvas>
+    </div>
+  </div>  
 </section>
 
-  <section class="social-container">
+<section class="social-container">
     <h3>SOCIAL STATS</h3>
+    <div class="social-cards">
+      
+      <div class="social-card">
+        <div class="social-image">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M23.998 12c0-6.628-5.372-12-11.999-12C5.372 0 0 5.372 0 12c0 5.988 4.388 10.952 10.124 11.852v-8.384H7.078v-3.469h3.046V9.356c0-3.008 1.792-4.669 4.532-4.669 1.313 0 2.686.234 2.686.234v2.953H15.83c-1.49 0-1.955.925-1.955 1.874V12h3.328l-.532 3.469h-2.796v8.384c5.736-.9 10.124-5.864 10.124-11.853z"/>
+          </svg>
+        </div>
+        <div class="social-text">
+          <p>Facebook</p>
+          <p>10,320</p>
+        </div>
+      </div>
+
     <div class="social-card">
       <div class="social-image">
-       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-         <path d="M23.998 12c0-6.628-5.372-12-11.999-12C5.372 0 0 5.372 0 12c0 5.988 4.388 10.952 10.124 11.852v-8.384H7.078v-3.469h3.046V9.356c0-3.008 1.792-4.669 4.532-4.669 1.313 0 2.686.234 2.686.234v2.953H15.83c-1.49 0-1.955.925-1.955 1.874V12h3.328l-.532 3.469h-2.796v8.384c5.736-.9 10.124-5.864 10.124-11.853z"/>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913a5.885 5.885 0 001.384 2.126A5.868 5.868 0 004.14 23.37c.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558a5.898 5.898 0 002.126-1.384 5.86 5.86 0 001.384-2.126c.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913a5.89 5.89 0 00-1.384-2.126A5.847 5.847 0 0019.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227a3.81 3.81 0 01-.899 1.382 3.744 3.744 0 01-1.38.896c-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421a3.716 3.716 0 01-1.379-.899 3.644 3.644 0 01-.9-1.38c-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 100 12.324 6.162 6.162 0 100-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 01-2.88 0 1.44 1.44 0 012.88 0z"/>
         </svg>
       </div>
       <div class="social-text">
-        <p>Facebook</p>
-        <p>10,320</p>
+        <p>Instagram</p>
+        <p>16,445</p>
       </div>
     </div>
-    <div class="social-card">
-    <div class="social-image">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913a5.885 5.885 0 001.384 2.126A5.868 5.868 0 004.14 23.37c.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558a5.898 5.898 0 002.126-1.384 5.86 5.86 0 001.384-2.126c.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913a5.89 5.89 0 00-1.384-2.126A5.847 5.847 0 0019.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227a3.81 3.81 0 01-.899 1.382 3.744 3.744 0 01-1.38.896c-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421a3.716 3.716 0 01-1.379-.899 3.644 3.644 0 01-.9-1.38c-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 100 12.324 6.162 6.162 0 100-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 01-2.88 0 1.44 1.44 0 012.88 0z"/>
-      </svg>
-      </div>
-      <div class="social-text">
-      <p>Instagram</p>
-      <p>16,445</p>
-      </div>
-</div>
+    
     <div class="social-card">
       <div class="social-image">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -163,21 +166,25 @@
       </div>
     </div>
 
-  </section>
+  </div>
+
+</section>
     
   
-  <section class="new-members">
+  <section class="new-members" id="new-members">
     <h3>NEW MEMBERS</h3>
     <div class="member-container">
       <div class="member-photo">
         <img src="images/member-1.jpg" />
+        
+        <div class="member-name">
+              <p>Victoria Chambers</p>
+              <a href="#">victoria.chambers80@example.com</a>
+            </div>
       </div>
-      <div class="member-name">
-        <p>Victoria Chambers</p>
-        <a href="#">victoria.chambers80@example.com</a>
-      </div>
+            
       <div class="date-joined">
-        <p>10/15/15</p>
+        <p>10/15/20</p>
       </div>
     </div>
 
@@ -185,13 +192,15 @@
     <div class="member-container">
       <div class="member-photo">
         <img src="images/member-2.jpg" />
+        
+        <div class="member-name">
+              <p>Dale Byrd</p>
+              <a href="#">dale.byrd52@example.com</a>
+            </div>
       </div>
-      <div class="member-name">
-        <p>Dale Byrd</p>
-        <a href="#">dale.byrd52@example.com</a>
-      </div>
+            
       <div class="date-joined">
-        <p>10/15/15</p>
+        <p>10/15/20</p>
       </div>
     </div>
 
@@ -199,13 +208,15 @@
     <div class="member-container">
       <div class="member-photo">
         <img src="images/member-3.jpg" />
+        
+        <div class="member-name">
+              <p>Dawn Wood</p>
+              <a href="#">dawn.wood16@example.com</a>
+            </div>
       </div>
-      <div class="member-name">
-        <p>Dawn Wood</p>
-        <a href="#">dawn.wood16@example.com</a>
-      </div>
+            
       <div class="date-joined">
-        <p>10/15/15</p>
+        <p>10/15/20</p>
       </div>
     </div>
 
@@ -213,15 +224,18 @@
     <div class="member-container">
       <div class="member-photo">
         <img src="images/member-4.jpg" />
+        
+        <div class="member-name">
+              <p>Dan Oliver</p>
+              <a href="#">dan.oliver82@example.com</a>
+            </div>
       </div>
-      <div class="member-name">
-        <p>Dan Oliver</p>
-        <a href="#">dan.oliver82@example.com</a>
-      </div>
+            
       <div class="date-joined">
-        <p>10/15/15</p>
+        <p>10/15/20</p>
       </div>
     </div>
+
   </section>
 
   <!-- recent activity -->
@@ -231,11 +245,13 @@
     <div class="activity">
       <div class="member-photo">
         <img src="images/member-1.jpg" />
+        
+          <div class="activity-text">
+           <p>Victoria Chambers commented on <strong>WebApp's SEO Tips</strong></p>
+           <p>4 hours ago</p>
+           </div>
       </div>
-      <div class="activity-text">
-        <p>Victoria Chambers commented on <strong>WebApp's SEO Tips</strong></p>
-        <p>4 hours ago</p>
-      </div>
+      
       <div class="link-to-activity">
         <a href="#">&gt;</a>
       </div>
@@ -245,13 +261,15 @@
     <div class="activity">
       <div class="member-photo">
         <img src="images/member-2.jpg" />
+        
+          <div class="activity-text">
+           <p>Dale Byrd liked the post <strong>Facebook's Changes for 2021</strong></p>
+           <p>4 hours ago</p>
+           </div>
       </div>
-      <div class="activity-text">
-        <p>Dale Byrd liked the post <strong>Facebook's Changes for 2021</strong></p>
-        <p>5 hours ago</p>
-      </div>
+      
       <div class="link-to-activity">
-        <p><a href="#">&gt;</a></p>
+        <a href="#">&gt;</a>
       </div>
     </div>
 
@@ -259,13 +277,15 @@
     <div class="activity">
       <div class="member-photo">
         <img src="images/member-3.jpg" />
+        
+          <div class="activity-text">
+           <p>Dawn Wood commented on <strong>Facebook's Changes for 2021</strong></p>
+           <p>4 hours ago</p>
+           </div>
       </div>
-      <div class="activity-text">
-        <p>Dawn Wood commented on <strong>Facebook's Changes for 2021</strong></p>
-        <p>5 hours ago</p>
-      </div>
+      
       <div class="link-to-activity">
-        <p><a href="#">&gt;</a></p>
+        <a href="#">&gt;</a>
       </div>
     </div>
 
@@ -273,13 +293,15 @@
     <div class="activity">
       <div class="member-photo">
         <img src="images/member-4.jpg" />
+        
+          <div class="activity-text">
+           <p>Dan Oliver posted <strong>WebApp's SEO Tips</strong></p>
+           <p>1 day ago</p>
+           </div>
       </div>
-      <div class="activity-text">
-        <p>Dan Oliver posted WebApp's SEO Tips </p>
-        <p>1 day ago</p>
-      </div>
+      
       <div class="link-to-activity">
-        <p><a href="#">&gt;</a></p>
+        <a href="#">&gt;</a>
       </div>
     </div>
 
@@ -298,38 +320,48 @@
    
   <!-- settings section with toggles: -->
   <!-- local settings widget -->
-<section class="settings">
+<section class="settings" id="settings">
   <h3>SETTINGS</h3>
  
+  
   <div class="switch">
-    <label for="input-toggle1">Send Email Notifications</label>
-    <div class="toggle">
+    <div class="label-toggle-pair">
+      <label for="input-toggle1">Send Email Notifications</label>
+    
+      <div class="toggle">
         <input type="checkbox" id="input-toggle1" class="input-toggle">
         <span class="slider round"></span>
+       </div>
     </div>
-</div>
+  </div>
+
 
 <div class="switch">
+  <div class="label-toggle-pair">
     <label for="input-toggle2">Set Profile to Public</label>
     <div class="toggle">
         <input type="checkbox" id="input-toggle2" class="input-toggle">
         <span class="slider round"></span>
     </div>
+  </div>
 </div>
 
-
- 
-  </section>
+</div>
+</section>
   
-  <div class="timezone-container">
-  <select class="timezone" id="timezone">
-    <option disabled selected>Select a Timezone</option>
-    <option>Eastern Standard Time (North America)</option>
-    <option>Central European Time</option>
-    <option>Eastern European Time</option>
-  </select>
-  </div>
-<section>
+ 
+
+  <section class="time-and-buttons">
+
+    <div class="timezone-container">
+      <select class="timezone" id="timezone">
+        <option disabled selected>Select a Timezone</option>
+        <option>Eastern Standard Time (North America)</option>
+        <option>Central European Time</option>
+        <option>Eastern European Time</option>
+      </select>
+      </div>
+
 
   <div class="settings-buttons">
   <button class="button-save" id="save">Save</button>

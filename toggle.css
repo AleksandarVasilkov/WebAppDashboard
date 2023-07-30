@@ -61,3 +61,42 @@
     transform: translateX(22px);
   }
   
+   
+  .switch {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 100%;
+  }
+  
+  .label-toggle-pair {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  @media (min-width: 768px) {
+    .switch {
+      display: grid;
+      grid-template-columns: max-content max-content;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  
+    .label-toggle-pair {
+      display: contents;
+    }
+  
+    .toggle {
+      margin-left: 10px;
+    }
+  }
+  
+  
+  
+  
+  
+    
+  
+  
