@@ -87,10 +87,10 @@ font-size: 0.7rem;
 
 #popupWindow {
     position: absolute;
-    top: 50px; /* Adjust according to your needs */
-    right: 50px; /* Adjust according to your needs */
-    height: 300px;
-    width: 400px; /* Adjust according to your needs */
+    top: 5vw; 
+    right: 5vw; 
+    height: 70vw;
+    width: 70vw; 
     background-color: white;
     border: 2px solid #7477BF;
     padding: 10px;
@@ -273,6 +273,8 @@ grid-area: recent-activity;
 }
 
 .widget-container-full {
+    display: flex;
+    align-items: center;
     padding: 20px;
     border-bottom: 2px solid darkgrey;
 
@@ -281,6 +283,9 @@ grid-area: recent-activity;
 .widget-container-half {
 border-bottom: 2px solid darkgrey;
 padding: 15px;
+display: flex;
+align-items: center;
+height: 100%;
 
  }
  
@@ -415,6 +420,8 @@ h3 {
 
 .member-photo img {
 border-radius: 50%;
+width: 65px; 
+height: 65px;
 
 }
 
@@ -597,6 +604,15 @@ background-color: darkgrey;
         'time-and-buttons time-and-buttons';
     }
 
+    #popupWindow {
+        position: absolute;
+        top: 5vw; 
+        right: 5vw; 
+        height: 40vw;
+        width: 40vw; 
+                   
+    }
+
     .alert-banner {
         justify-content: space-between;
     }
@@ -646,7 +662,7 @@ background-color: darkgrey;
 }
 
 .social-card {
-    width: 33%;
+    width: 28%;
  }
 
 .member-container {
@@ -730,6 +746,19 @@ background-color: darkgrey;
         'message-user time-and-buttons';
     
 }
+
+#popupWindow {
+    position: absolute;
+    top: 5vw; 
+    right: 5vw; 
+    height: 20vw;
+    width: 20vw; 
+}
+
+.recent-activity, .settings {
+    border-left: 1px solid darkgrey; 
+}
+
 }
 
 

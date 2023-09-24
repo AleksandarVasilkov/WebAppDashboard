@@ -1,9 +1,3 @@
-.switch {
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
   
   .switch label {
     margin-right: 10px;
@@ -11,7 +5,7 @@
   
   .toggle {
     position: relative;
-    width: 60px;
+    width: 75px;
     height: 34px;
   }
   
@@ -25,12 +19,16 @@
   }
   
   .slider {
+    display: flex;                
+    justify-content: flex-start;      
+    align-items: center;      
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background-color: #ccc;
+    color: white;
     transition: .4s;
     border: 2px solid lightgrey;
     border-radius: 34px;
@@ -42,12 +40,17 @@
     content: "";
     height: 26px;
     width: 26px;
-    left: 4px;
+    left: 14px;
     bottom: 2px;
     background-color: white;
     transition: .4s;
     border-radius: 50%;
   }
+/* 
+  .sliderround {
+
+
+  } */
   
   .input-toggle:checked + .slider {
     background-color: #7477BF;
@@ -60,37 +63,44 @@
   .input-toggle:checked + .slider:before {
     transform: translateX(22px);
   }
+
+  .input-toggle:not(:checked) + .slider {
+    color: transparent;      
+  }
+
+  .switch-wrapper {
+    display: flex; 
+    flex-direction: column;  /* stack children on top of each other */
+    align-items: center;     /* center children horizontally */
+    width: 100%;             /* take up full width available */
+}
+
+.label-toggle-pair {
+    display: flex;           /* set this as a flex container */
+    justify-content: space-between;  /* space the label and toggle apart */
+    align-items: center;     /* vertically align the label and toggle in the middle */
+    width: 100%;             /* take up full width available within the switch-wrapper */
+    margin-bottom: 10px;     /* give some space between each pair */
+}
+
+   
+  @media (min-width: 768px) {
+  
+    
+    .switch-wrapper {
+      align-items: flex-start; /* left-align the contents */
+      padding-left: 20px;      /* some padding to keep contents away from the screen edge */
+      width: 50%;
+  }
+
+  .label-toggle-pair {
+      display: flex;              /* ensure contents are in a row */
+      justify-content: space-between; /* left-align the label and toggle */
+      align-items: center;        /* vertically center the label and toggle */
+      gap: 2px;                /* add some space between the label and the toggle */
+  }
   
    
-  .switch {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    width: 100%;
-  }
-  
-  .label-toggle-pair {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-  
-  @media (min-width: 768px) {
-    .switch {
-      display: grid;
-      grid-template-columns: max-content max-content;
-      justify-content: flex-start;
-      align-items: center;
-    }
-  
-    .label-toggle-pair {
-      display: contents;
-    }
-  
-    .toggle {
-      margin-left: 10px;
-    }
   }
   
   
