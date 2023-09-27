@@ -70,17 +70,17 @@
 
   .switch-wrapper {
     display: flex; 
-    flex-direction: column;  /* stack children on top of each other */
-    align-items: center;     /* center children horizontally */
-    width: 100%;             /* take up full width available */
+    flex-direction: column;  
+    align-items: center;     
+    width: 100%;             
 }
 
 .label-toggle-pair {
-    display: flex;           /* set this as a flex container */
-    justify-content: space-between;  /* space the label and toggle apart */
-    align-items: center;     /* vertically align the label and toggle in the middle */
-    width: 100%;             /* take up full width available within the switch-wrapper */
-    margin-bottom: 10px;     /* give some space between each pair */
+    display: flex;           
+    justify-content: space-between;  
+    align-items: center;     
+    width: 100%;             
+    margin-bottom: 10px;     
 }
 
    
@@ -88,16 +88,35 @@
   
     
     .switch-wrapper {
-      align-items: flex-start; /* left-align the contents */
-      padding-left: 20px;      /* some padding to keep contents away from the screen edge */
-      width: 50%;
+      align-items: flex-start; 
+      padding-left: 20px;      
+      width: 60%;
   }
 
   .label-toggle-pair {
-      display: flex;              /* ensure contents are in a row */
-      justify-content: space-between; /* left-align the label and toggle */
-      align-items: center;        /* vertically center the label and toggle */
-      gap: 2px;                /* add some space between the label and the toggle */
+      display: flex;              
+      justify-content: space-between; 
+      align-items: center;        
+      gap: 2px;                
+  }
+  
+   
+  }
+
+  @media (min-width: 1024px) {
+  
+    
+    .switch-wrapper {
+      align-items: flex-start; 
+      padding-left: 20px;      
+      width: 60%;
+  }
+
+  .label-toggle-pair {
+      display: flex;              
+      justify-content: space-between; 
+      align-items: center;        
+      gap: 2px;                
   }
   
    

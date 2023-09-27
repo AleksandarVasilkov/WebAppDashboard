@@ -87,13 +87,14 @@ font-size: 0.7rem;
 
 #popupWindow {
     position: absolute;
-    top: 5vw; 
-    right: 5vw; 
-    height: 70vw;
-    width: 70vw; 
+    top: 15vw; 
+    right: 1vw; 
+    left: 1vw;
+    height: 95vw;
+    width: 95vw; 
     background-color: white;
     border: 2px solid #7477BF;
-    padding: 10px;
+    padding: 0;
     z-index: 1;
        
 }
@@ -108,16 +109,15 @@ font-size: 0.7rem;
     color: black;
     font-weight: bold;
     background-color: rgb(235, 185, 235);
-    margin-bottom: 1em;
+    margin-bottom: 0;
     text-align: center;
 
 }
 
 .popup-notification {
-    font-size: 1em;
     color: #666;
     margin-bottom: 0.5em;
-    padding: 0.5em;
+    padding: 6px;
     border-bottom: 1px solid #ddd;
   
   }
@@ -426,8 +426,8 @@ height: 65px;
 }
 
 .member-name p, .activity-text p {
-text-align: center;
-margin-top: 5px;
+text-align: left;
+
 
 }
 
@@ -493,6 +493,7 @@ margin-top: 5px;
 }
 
 .settings {
+    margin-top: 10px;
     padding: 10px;
     grid-area: settings;
 }
@@ -607,11 +608,13 @@ background-color: darkgrey;
     #popupWindow {
         position: absolute;
         top: 5vw; 
-        right: 5vw; 
+        left: 40vw; 
         height: 40vw;
         width: 40vw; 
                    
     }
+
+    
 
     .alert-banner {
         justify-content: space-between;
@@ -662,7 +665,8 @@ background-color: darkgrey;
 }
 
 .social-card {
-    width: 28%;
+    width: 30%;
+    padding: 1px;
  }
 
 .member-container {
@@ -695,11 +699,8 @@ background-color: darkgrey;
 }
 
 .activity-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin: 10px;
+    
+    margin-left: 10px;
 }
 
 .link-to-activity {
@@ -751,12 +752,18 @@ background-color: darkgrey;
     position: absolute;
     top: 5vw; 
     right: 5vw; 
-    height: 20vw;
-    width: 20vw; 
+    height: 25vw;
+    width: 40vw; 
 }
 
-.recent-activity, .settings {
+
+.recent-activity, .settings, .time-and-buttons {
     border-left: 1px solid darkgrey; 
+}
+
+
+.time-and-buttons {
+    border-bottom: 1px solid darkgrey;; 
 }
 
 }

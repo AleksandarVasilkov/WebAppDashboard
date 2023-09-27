@@ -34,7 +34,7 @@ window.addEventListener('load', function() {
             data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
             fill: 'origin', 
             backgroundColor: 'rgba(213, 214, 236, .3)', 
-            borderColor: 'rgba(100, 100, 100, 1)', 
+            borderColor: 'magenta', 
             borderWidth: 1, 
             tension: 0.4 
         },
@@ -42,7 +42,7 @@ window.addEventListener('load', function() {
             data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
             fill: 'origin', 
             backgroundColor: 'rgba(213, 214, 236, .3)', 
-            borderColor: 'rgba(100, 100, 100, 1)', 
+            borderColor: 'mediumslateblue', 
             borderWidth: 1, 
             tension: 0.4 
         },
@@ -50,7 +50,7 @@ window.addEventListener('load', function() {
             data: [18000, 30000, 24000, 48000, 36000, 42000, 30000, 44400, 54000, 36000, 60000],
             fill: 'origin', 
             backgroundColor: 'rgba(213, 214, 236, .3)', 
-            borderColor: 'rgba(100, 100, 100, 1)', 
+            borderColor: 'royalblue', 
             borderWidth: 1, 
             tension: 0.4 
         },
@@ -58,7 +58,7 @@ window.addEventListener('load', function() {
             data: [126000, 210000, 168000, 336000, 252000, 294000, 210000, 310800, 378000, 252000, 420000],
             fill: 'origin', 
             backgroundColor: 'rgba(213, 214, 236, .3)', 
-            borderColor: 'rgba(100, 100, 100, 1)', 
+            borderColor: 'mistyrose', 
             borderWidth: 1, 
             tension: 0.4 
         }
