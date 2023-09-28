@@ -31,7 +31,7 @@ window.addEventListener('load', function() {
     
     var datasets = {
         hourly: {
-            data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
+            data: [750, 425, 1000, 1650, 1500, 1750, 845, 1850, 955, 1500, 2500],
             fill: 'origin', 
             backgroundColor: 'rgba(213, 214, 236, .3)', 
             borderColor: 'magenta', 
@@ -47,7 +47,7 @@ window.addEventListener('load', function() {
             tension: 0.4 
         },
         weekly: {
-            data: [18000, 30000, 24000, 48000, 36000, 42000, 30000, 44400, 54000, 36000, 60000],
+            data: [18000, 21500, 24000, 37500, 36000, 32300, 17500, 44400, 58000, 36000, 45000],
             fill: 'origin', 
             backgroundColor: 'rgba(213, 214, 236, .3)', 
             borderColor: 'royalblue', 
@@ -55,7 +55,7 @@ window.addEventListener('load', function() {
             tension: 0.4 
         },
         monthly: {
-            data: [126000, 210000, 168000, 336000, 252000, 294000, 210000, 310800, 378000, 252000, 420000],
+            data: [126000, 19500, 168000, 336000, 245000, 294000, 210000, 310800, 378000, 252000, 455000],
             fill: 'origin', 
             backgroundColor: 'rgba(213, 214, 236, .3)', 
             borderColor: 'mistyrose', 
@@ -207,7 +207,10 @@ send.addEventListener('click', () => {
         alert("Please fill out message field before sending");
     } else {
         alert(`Message successfully sent to: ${user.value}`);
+        user.value = "";  
+        message.value = "";  
     }
+    
 });
 
 
@@ -242,8 +245,8 @@ user.addEventListener("keydown", function(e) {
 
 window.addEventListener('load', function() {
     
-    var sendEmail = JSON.parse(localStorage.getItem('sendEmail')) || false;
-    var setPublicProfile = JSON.parse(localStorage.getItem('setPublicProfile')) || false;
+    var sendEmail = JSON.parse(localStorage.getItem('sendEmail')) || true;
+    var setPublicProfile = JSON.parse(localStorage.getItem('setPublicProfile')) || true;
     var timezone = localStorage.getItem('timezone') || "Select a Timezone";
 
     

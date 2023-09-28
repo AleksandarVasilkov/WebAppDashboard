@@ -245,14 +245,17 @@ grid-area: recent-activity;
 
 }
 
-.traffic, 
-.daily, 
-.mobile, 
-.social-container,
-.new-members,
-.recent-activity {
+
+.social-container {
+    margin-top: 10px;
+ }
+
+ .traffic
+{
     margin-top: 20px;
  }
+
+
 
 .traffic-nav-link {
     
@@ -313,13 +316,15 @@ padding: 2%;
         
 }
 
-
-
 h3 {
     text-align: left;
     margin-left: 10px;
     margin-bottom: 10px;  
 }   
+
+.daily h3, .mobile h3, .new-members h3, .recent-activity h3, .message-user h3 {
+    margin-top: 10px;
+}
 
 
 .social-card {
@@ -362,12 +367,13 @@ h3 {
 
 .new-members, 
 .recent-activity {
-    padding: 5px;
+    
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     border-bottom: 2px solid darkgrey;
+    
 
 }
 
@@ -426,9 +432,7 @@ height: 65px;
 }
 
 .member-name p, .activity-text p {
-text-align: left;
-
-
+text-align: center;
 }
 
 .link-to-activity {
@@ -436,7 +440,6 @@ text-align: left;
 }
 
 .message-user {
-    margin-top: 10px;
     padding: 10px;
     border-bottom: 1px solid darkgrey;
     grid-area: message-user;
@@ -633,9 +636,23 @@ background-color: darkgrey;
 
 /* daily / mobile widgets */
 
+.daily {
+   border-right: 1px solid darkgrey;
+   border-bottom: 1px solid darkgrey; 
+
+}
+
+.mobile {
+    border-bottom: 1px solid darkgrey; 
+}
+
+.daily h3, .mobile h3, .new-members h3, .recent-activity h3 {
+    margin-top: 10px;
+}
+
 .daily-traffic-wrapper {
-    border-right: 1px solid grey;
-    border-bottom: 1px solid grey;
+    
+    /* border-bottom: 1px solid grey; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -643,7 +660,7 @@ background-color: darkgrey;
 }
 
 .mobile-traffic-wrapper {
-    border-bottom: 1px solid grey;
+    /* border-bottom: 1px solid grey; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -653,8 +670,13 @@ background-color: darkgrey;
 .widget-container-half {
     border: 0;
     padding: 0;
-    
+      
 }
+
+.member-name p, .activity-text p {
+    text-align: left;
+    }
+
 .social-cards {
     display: flex;
     flex-direction: row;
@@ -757,14 +779,25 @@ background-color: darkgrey;
 }
 
 
-.recent-activity, .settings, .time-and-buttons {
-    border-left: 1px solid darkgrey; 
-}
+
 
 
 .time-and-buttons {
     border-bottom: 1px solid darkgrey;; 
 }
+
+.new-members, .message-user {
+    border-right: 1px solid darkgrey;
+     
+ 
+ }
+ 
+ 
+
+ 
+ .daily h3, .mobile h3, .new-members h3, .recent-activity h3 {
+     margin-top: 10px;
+ }
 
 }
 
