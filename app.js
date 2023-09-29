@@ -215,7 +215,7 @@ send.addEventListener('click', () => {
 
 
 
-var names = ["Victoria", "Dan", "Dawn", "Dale"];
+var names = ["Victoria Chambers", "Dan Oliver", "Dawn Wood", "Dale Byrd"];
 var lastKeyWasBackspace = false;
 
 document.getElementById("userField").addEventListener("keydown", function(e) {
@@ -245,8 +245,12 @@ user.addEventListener("keydown", function(e) {
 
 window.addEventListener('load', function() {
     
-    var sendEmail = JSON.parse(localStorage.getItem('sendEmail')) || true;
-    var setPublicProfile = JSON.parse(localStorage.getItem('setPublicProfile')) || true;
+    var sendEmailStored = localStorage.getItem('sendEmail');
+    var sendEmail = sendEmailStored !== null ? JSON.parse(sendEmailStored) : true;
+
+    var setPublicProfileStored = localStorage.getItem('setPublicProfile');
+    var setPublicProfile = setPublicProfileStored !== null ? JSON.parse(setPublicProfileStored) : true;
+    
     var timezone = localStorage.getItem('timezone') || "Select a Timezone";
 
     
@@ -271,8 +275,8 @@ document.getElementById('cancel').addEventListener('click', resetSettings);
 
 function resetSettings() {
     
-    document.getElementById('input-toggle1').checked = false;
-    document.getElementById('input-toggle2').checked = false;
+    document.getElementById('input-toggle1').checked = true;
+    document.getElementById('input-toggle2').checked = true;
 
     
     document.getElementById('timezone').value = "Select a Timezone";
